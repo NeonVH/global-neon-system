@@ -1,0 +1,49 @@
+:root {
+  --bg-0: #05000a;
+  --bg-1: #0b0314;
+  --bg-2: #12051f;
+  --bg-3: rgba(17, 11, 31, 0.72);
+  --surface-0: rgba(10, 12, 24, 0.6);
+  --surface-1: rgba(19, 10, 35, 0.7);
+  --surface-2: rgba(17, 16, 34, 0.84);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(0, 240, 255, 0.28);
+  --text-0: #f7f5ff;
+  --text-1: #d1cde8;
+  --text-2: #9f99c1;
+  --violet: #bc13fe;
+  --violet-soft: rgba(188, 19, 254, 0.16);
+  --cyan: #00f0ff;
+  --cyan-soft: rgba(0, 240, 255, 0.16);
+  --gold: #facc15;
+  --gold-soft: rgba(250, 204, 21, 0.18);
+  --success: #22c55e;
+  --danger: #fb7185;
+  --danger-soft: rgba(251, 113, 133, 0.18);
+  --warning: #f59e0b;
+  --glass-blur: blur(20px);
+  --radius-xs: 12px;
+  --radius-sm: 18px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --shadow-panel: 0 28px 90px rgba(0, 0, 0, 0.45);
+  --shadow-violet: 0 0 32px rgba(188, 19, 254, 0.26);
+  --shadow-cyan: 0 0 32px rgba(0, 240, 255, 0.22);
+  --gradient-hero: radial-gradient(circle at top left, rgba(188, 19, 254, 0.25), transparent 35%), radial-gradient(circle at top right, rgba(0, 240, 255, 0.2), transparent 30%), linear-gradient(135deg, rgba(7, 2, 16, 0.96), rgba(17, 6, 28, 0.9));
+  --gradient-panel: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  --gradient-button: linear-gradient(135deg, rgba(188, 19, 254, 0.95), rgba(0, 240, 255, 0.85));
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+  --max-width: 1240px;
+  --transition-fast: 140ms ease;
+  --transition-base: 220ms ease;
+  --transition-slow: 420ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
