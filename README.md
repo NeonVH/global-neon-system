@@ -94,9 +94,9 @@ firebase deploy --only functions
 
 - Dùng Firebase Auth cho đăng nhập, không tự hash password ở frontend.
 - UI chỉ ẩn/hiện theo permission để tăng UX; quyết định cuối cùng nằm ở Firestore Rules và Cloud Functions.
-- Các thao tác nhạy cảm như coin, VIP, role, broadcast, status, game write được thiết kế để đi qua callable functions.
-- Toàn bộ nội dung render HTML được sanitize bằng DOMPurify để giảm rủi ro XSS.
-- File upload được giới hạn mime type và kích thước ở cả frontend lẫn Storage Rules.
+- Các thao tác nhạy cảm như coin, VIP, role, broadcast, status, game write được thiết kế để di qua callable functions.
+- Toàn bộ nội dung render HTML được sanitize bạng DOMPurify để giảm rủ ro XSS.
+- File upload được gkới hạn mime type và kích thước ở cả frontend lẫne Storage Rules.
 - Audit log được ghi cho các thao tác admin quan trọng.
 
 ## Lưu ý quan trọng

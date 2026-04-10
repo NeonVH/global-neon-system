@@ -1,0 +1,49 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc(uid) {
+      return firestore.get(/databases/(default)/documents/users/$(uid));
+    }
+
+    function hasPermission(permission) {
+      return signedIn() &&
+        (
+          userDoc(request.auth.uid).data.role == "superadmin" ||
+          userDoc(request.auth.uid).data.permissions[permission] == true
+        );
+    }
+
+    function isImage(maxMb) {
+      return request.resource.contentType.matches("image/.*") && request.resource.size < maxMb * 1024 * 1024;
+    }
+
+    match /avatars/{uid}/{fileName} {
+      allow read: if true;
+      allow write: if signedIn() && request.auth.uid == uid && isImage(1.5);
+    }
+
+    match /covers/{folder}/{fileName} {
+      allow read: if true;
+      allow write: if hasPermission("canManageGames") && isImage(3);
+    }
+
+    match /screenshots/{folder}/{fileName} {
+      allow read: if true;
+      allow write: if hasPermission("canManageGames") && isImage(3);
+    }
+
+    match /vip-proofs/{uid}/{fileName} {
+      allow read: if signedIn() && (request.auth.uid == uid || hasPermission("canManageVip"));
+      allow write: if signedIn() && request.auth.uid == uid && isImage(3);
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
